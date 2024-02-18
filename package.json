@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon --inspect ./index.js"
+    "start": "nodemon --inspect ./src/index.js"
   },
   "type": "module",
   "keywords": [],
@@ -15,6 +15,9 @@
     "express": "^4.18.2"
   },
   "devDependencies": {
+    "@babel/core": "^7.23.9",
+    "@babel/node": "^7.23.9",
+    "@babel/preset-env": "^7.23.9",
     "ejs": "^3.1.9",
     "express-handlebars": "^7.1.2",
     "morgan": "^1.10.0",
