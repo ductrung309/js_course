@@ -1,18 +1,13 @@
 import express from "express";
 import morgan from "morgan";
 import { engine } from "express-handlebars";
-
-import nodemailer from "nodemailer";
+import { mail } from "./config/mail.js";
 
 const app = express();
 const port = process.env.port || 3000;
 
+//static file
 app.use(express.static("./src/public"));
-
-//HTTPS LOGGER
-app.use(morgan("combined"));
-
-//Templates engine
 
 //https logger
 app.use(morgan("combined"));
@@ -28,36 +23,9 @@ app.get("/", (req, res) => {
   res.render("home", { layout: "./main" });
 });
 
-//Mail send
-const tranSporter = nodemailer.createTransport({
-  service: "gmail",
-  service: "gmail",
-  host: "smtp.gmail.com",
-  port: 465,
-  secure: true,
-  auth: {
-    user: "anhlatrung5c@gmail.com",
-    pass: "aztb fnaw hrms chth",
-  },
-});
-
-const mailOptions = {
-  from: "anhlatrung5c@gmail.com",
-  to: "longthancongviec1@gmail.com",
-  subject: "Tron dang iu wa troi ne!!",
-  text: "Dai dang iu hon ne!",
-};
-
-tranSporter.sendMail(mailOptions, function (error, info) {
-  if (error) {
-    console.log(error);
-  } else {
-    console.log("Email sent: " + info.response);
-  }
-});
+//send code
+mail("Nhớ cổ wa đi à", Math.floor(Math.random() * 1000000));
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`);
 });
-
-export { tranSporter, mailOptions };

@@ -3,11 +3,11 @@
   "version": "1.0.0",
   "description": "��#\u0000 \u0000j\u0000s\u0000_\u0000c\u0000o\u0000u\u0000r\u0000s\u0000e\u0000\r\u0000 \u0000",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon --inspect ./src/index.js"
   },
-  "type": "module",
   "keywords": [],
   "author": "",
   "license": "ISC",
@@ -21,6 +21,7 @@
     "ejs": "^3.1.9",
     "express-handlebars": "^7.1.2",
     "morgan": "^1.10.0",
+    "mssql": "^10.0.2",
     "nodemailer": "^6.9.10",
     "nodemon": "^3.0.3"
   }
