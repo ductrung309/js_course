@@ -1,7 +1,7 @@
 import express from "express";
 import morgan from "morgan";
 import { engine } from "express-handlebars";
-import routes from "./routes";
+import routes from "./routes/index.js";
 
 const app = express();
 const port = process.env.port || 3000;
