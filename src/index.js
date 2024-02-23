@@ -1,7 +1,6 @@
 import express from "express";
 import morgan from "morgan";
 import { engine } from "express-handlebars";
-import routes from "./routes/index.js";
 
 import nodemailer from "nodemailer";
 
@@ -23,8 +22,6 @@ app.use(morgan("combined"));
 app.engine(".hbs", engine({ extname: ".hbs" }));
 app.set("view engine", ".hbs");
 app.set("views", "./views");
-
-routes(app);
 
 //router
 app.get("/", (req, res) => {
